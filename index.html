@@ -242,9 +242,92 @@ footer{
 }
 
 /* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media(max-width:1024px){
+  .section-box{
+    margin:50px 5%;
+    padding:40px 25px;
+  }
+}
+
+/* Mobile */
 @media(max-width:768px){
-  .hero h2{font-size:32px;}
-  .about-flex{flex-direction:column;}
+
+  nav{
+    flex-direction:column;
+    gap:15px;
+    text-align:center;
+  }
+
+  nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .hero{
+    height:auto;
+    padding:100px 20px;
+  }
+
+  .hero h2{
+    font-size:30px;
+  }
+
+  .menu-container{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .menu-card{
+    width:100%;
+    max-width:350px;
+  }
+
+  .about-flex{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .stats{
+    flex-direction:column;
+  }
+
+  .reviews-container{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .review-card{
+    width:100%;
+    max-width:350px;
+  }
+
+  .cart-item{
+    flex-direction:column;
+    gap:5px;
+  }
+
+  .cart-total{
+    text-align:center;
+  }
+}
+
+/* Small Mobile */
+@media(max-width:480px){
+
+  .hero h2{
+    font-size:22px;
+  }
+
+  .hero p{
+    font-size:14px;
+  }
+
+  .section-box{
+    padding:30px 15px;
+  }
+
 }
 
 </style>
@@ -287,7 +370,7 @@ footer{
       <h3>Donuts</h3><p>$5</p>
     </div>
     <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=500&q=60" alt="Cheesecake">
+      <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=500&q=60">
       <h3>Cheesecake</h3><p>$12</p>
     </div>
   </div>
@@ -296,7 +379,7 @@ footer{
 <!-- ABOUT -->
 <section id="about" class="section-box">
   <div class="about-flex">
-    <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=600&q=60" alt="Dessert Shop">
+    <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=600&q=60">
     <div class="about-text">
       <h2>About SweetBite</h2>
       <p>SweetBite delivers premium desserts crafted with fresh ingredients and passion.</p>
