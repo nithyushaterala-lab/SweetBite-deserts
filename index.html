@@ -51,6 +51,13 @@ nav ul li a{
   font-weight:500;
 }
 
+/* Hamburger */
+.menu-toggle{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+}
+
 /* ================= HERO ================= */
 .hero{
   height:90vh;
@@ -63,13 +70,8 @@ nav ul li a{
   padding:0 20px;
 }
 
-.hero h2{
-  font-size:50px;
-}
-
-.hero p{
-  margin:20px 0;
-}
+.hero h2{ font-size:50px; }
+.hero p{ margin:20px 0; }
 
 .hero button{
   padding:12px 30px;
@@ -131,9 +133,7 @@ nav ul li a{
   border-radius:20px;
 }
 
-.about-text{
-  flex:1;
-}
+.about-text{ flex:1; }
 
 .about-text h2{
   color:#ff4f87;
@@ -254,15 +254,25 @@ footer{
 /* Mobile */
 @media(max-width:768px){
 
-  nav{
-    flex-direction:column;
-    gap:15px;
-    text-align:center;
+  .menu-toggle{
+    display:block;
   }
 
   nav ul{
-    flex-wrap:wrap;
-    justify-content:center;
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:#ff4f87;
+    flex-direction:column;
+    text-align:center;
+    padding:20px 0;
+    gap:20px;
+    display:none;
+  }
+
+  nav ul.active{
+    display:flex;
   }
 
   .hero{
@@ -270,9 +280,7 @@ footer{
     padding:100px 20px;
   }
 
-  .hero h2{
-    font-size:30px;
-  }
+  .hero h2{ font-size:30px; }
 
   .menu-container{
     flex-direction:column;
@@ -289,9 +297,7 @@ footer{
     text-align:center;
   }
 
-  .stats{
-    flex-direction:column;
-  }
+  .stats{ flex-direction:column; }
 
   .reviews-container{
     flex-direction:column;
@@ -315,19 +321,9 @@ footer{
 
 /* Small Mobile */
 @media(max-width:480px){
-
-  .hero h2{
-    font-size:22px;
-  }
-
-  .hero p{
-    font-size:14px;
-  }
-
-  .section-box{
-    padding:30px 15px;
-  }
-
+  .hero h2{ font-size:22px; }
+  .hero p{ font-size:14px; }
+  .section-box{ padding:30px 15px; }
 }
 
 </style>
@@ -337,7 +333,8 @@ footer{
 
 <nav>
   <h1>SweetBite</h1>
-  <ul>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <ul id="nav-links">
     <li><a href="#menu">Menu</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#cart">Cart</a></li>
@@ -345,6 +342,28 @@ footer{
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
+
+<!-- HERO
+<section class="hero">
+  <h2>Delight in Every Bite</h2>
+  <p>Freshly baked desserts made with love and premium ingredients.</p>
+  <button onclick="document.getElementById('menu').scrollIntoView()">Explore Menu</button>
+</section>
+
+<!-- (All other sections unchanged) -->
+
+<!-- <footer>
+  © 2026 SweetBite | All Rights Reserved
+</footer> -->
+
+<script>
+function toggleMenu(){
+  document.getElementById("nav-links").classList.toggle("active");
+}
+</script>
+
+</body>
+</html> -->
 
 <!-- HERO -->
 <section class="hero">
@@ -370,7 +389,7 @@ footer{
       <h3>Donuts</h3><p>$5</p>
     </div>
     <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=500&q=60">
+      <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=500&q=60" alt="Cheesecake">
       <h3>Cheesecake</h3><p>$12</p>
     </div>
   </div>
@@ -379,7 +398,7 @@ footer{
 <!-- ABOUT -->
 <section id="about" class="section-box">
   <div class="about-flex">
-    <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=600&q=60">
+    <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=600&q=60" alt="Dessert Shop">
     <div class="about-text">
       <h2>About SweetBite</h2>
       <p>SweetBite delivers premium desserts crafted with fresh ingredients and passion.</p>
@@ -442,7 +461,7 @@ footer{
 </section>
 
 <footer>
-  © 2026 SweetBite | All Rights Reserved
+  © 2026 SweetBite|bulit by PUPPY|All Rights Reserved.
 </footer>
 
 </body>
